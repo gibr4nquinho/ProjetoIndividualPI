@@ -1,0 +1,128 @@
+.tela {
+  background-color: inherit;
+}
+
+.card-box {
+  font-family: "Montserrat", serif;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 60vh;
+  background-color: whitesmoke;
+  /* margin: auto; */
+  /* margin-top: 10%; */
+  /* border-radius: 50px; */
+  text-align: center;
+  align-items: center;
+  opacity: 0.9;
+  flex-direction: column;
+}
+
+.card-box a {
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.card-box h1 {
+  color: #000000;
+  margin-bottom: 20%;
+}
+
+.input {
+  max-width: 190px;
+  font-family: "Montserrat", serif;
+  font-weight: 800;
+  height: 44px;
+  background-color: #05060f0a;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+  margin-bottom: 10%;
+}
+
+.label {
+  display: block;
+  font-family: "Montserrat", serif;
+  margin-bottom: 0.3rem;
+  font-size: 25px;
+  font-weight: bold;
+  color: #05060f99;
+  transition: color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+}
+
+.label::placeholder{
+  color: #171a2f99;
+}
+
+.input:hover,
+.input:focus,
+.input-group:hover .input {
+  outline: none;
+  border-color: #05060f;
+}
+
+.input-group:hover .label,
+.input:focus {
+  color: #05060fc2;
+}
+
+.banner-cadastro {
+  height: 100vh;
+  color: white;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+}
+
+.goBack {
+  width: 100px;
+  height: 100px;
+}
+
+.goBack img {
+  height: 100px;
+  width: 100px;
+  justify-content: left;
+}
+
+.banner-cadastro video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(50%);
+}
+
+.log-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8%;
+  gap: 10px;
+}
+
+.log-text a {
+  color: #05060f99;
+  width: fit-content;
+  height: fit-content;
+}
+
+.log-text .link-login {
+  color: rgb(19, 156, 246);
+}
+
+.log-text .link-login:hover {
+  color: rgb(16, 127, 202);
+  filter: brightness(0.8);
+}

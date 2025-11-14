@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Addams Family | Página Inicial</title>
+
+  <script src="./js/sessao.js"></script>
+  <link rel="stylesheet" href="./css/estilo.css">
+  <link rel="icon" href="./assets/icon/logosiyte.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <a href="#inicio" class="titulo"></a>
+      <ul class="navbar">
+        <li class="agora"><a href="#inicio">Início</a></li>
+        <li><a href="#historia">Minha história</a></li>
+        <li><a href="#origem">Origem</a></li>
+        <li><a href="#sociedade">Sociedade</a></li>
+        <li><a href="#personagens">Personagens</a></li>
+        <li><a href="cadastro.html" class="btn-cadastro">Cadastro</a></li>
+        <li><a href="login.html" class="btn-login">Login</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="banner">
+    <video autoplay muted loop>
+      <source src="./assets/imgs/fmbanner.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+
+    <div class="container">
+      <b>
+        <p>"Nós nos banqueteamos alegremente com aqueles que nos subjugam" - Família Addams</p>
+      </b>
+    </div>
+  </div>
+
+  <div id="historia" class="social">
+  <div class="container">
+    <div class="frase">Minha História</div>
+    <div class="boxes">
+      <div class="conteudo">
+ 
+</div>
+</div>
+</div>
+      <div class="box">
+         <div class="carousel-container">
+    <img name="slide" src="./assets/imgs/minhafamilia1.jpg" alt="Família Addams">
+  </div>
+        Comecei a assistir A Família Addams por influência da minha mãe, que 
+        muitos diziam lembrar a Mortícia: sombria, calma e misteriosa, o filme se tornou um refúgio para fuga dos problemas, 
+        que assisto quando preciso de conforto, eu gosto de ver a forma que eles se amam. <br><br> Desde então, o filme de 1991 se tornou meu refúgio, aquele que assisto sempre que preciso de conforto, mesmo sendo tão diferentes, me lembra minha própria família, unida, isolada e autêntica, sem medo de ser quem é. Cresci me identificando com a Wednesday, com seu olhar diferente sobre o mundo. <br><br> Os Addams me ensinaram que ser diferente não é um defeito, é uma identidade, por isso amo a mansão sombria, o humor 
+        macabro e o amor genuíno entre eles, me fizeram enxergar que mesmo nas famílias imperfeitas, há beleza, força e pertencimento.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="origem" class="social">
+  <div class="container">
+    <div class="frase">Origem</div>
+    <div class="boxes">
+      <div class="box2">
+        Comecei a assistir A Família Addams por influência da minha mãe, que muitos diziam lembrar a 
+        Mortícia: sombria, calma e misteriosa, o filme se tornou um refúgio para fuga dos problemas, que 
+        assisto quando preciso de conforto, eu gosto de ver a forma que eles se amam. <br><br> Desde então, o filme
+         de 1991 se tornou meu refúgio, aquele que assisto sempre que preciso de conforto, mesmo sendo tão diferentes, me
+          lembra minha própria família, unida, isolada e autêntica, sem medo de ser quem é. Cresci me identificando com a Wednesday, 
+          com seu olhar diferente sobre o mundo. <br><br> Os Addams me ensinaram que ser diferente não é um defeito, é uma identidade, por isso amo a mansão sombria, o humor macabro e o
+         amor genuíno entre eles, me fizeram enxergar que mesmo nas famílias imperfeitas, há beleza, força e pertencimento.
+      </div>
+    </div>
+  </div>
+</div>
+<div id="sociedade" class="social">
+  <div class="container">
+    <div class="frase">Sociedade</div>
+    <div class="boxes">
+      <div class="box3">
+        C
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="personagens" class="social">
+  <div class="container">
+    <div class="frase">Personagens</div>
+    <div class="boxes">
+      <div class="box4">
+        ento.
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="div_resultado"></div>
+</body>
+
+</html>
+<script>
+ var imagens = [
+  "./assets/imgs/minhafamilia1.jpg",
+  "./assets/imgs/minhafamilia2.jpg",
+  "./assets/imgs/minhafamilia3.jpg"
+]
+
+  var indice = 0;
+  function avancar() {
+    indice++;
+    if (indice >= imagens.length) {
+      indice = 0;
+    }
+    document.slide.src = imagens[indice];
+  }
+
+  function voltar() {
+    indice--;
+    if (indice < 0) {
+      indice = imagens.length - 1;
+    }
+    document.slide.src = imagens[indice];
+  }
+  setInterval(avancar, 2000);
+</script>
