@@ -9,7 +9,7 @@
   <title>Addams Family | Página Inicial</title>
 
   <script src="./js/sessao.js"></script>
-  <link rel="stylesheet" href="./css/estilo.css">
+  <link rel="stylesheet" href="./css/cadastro.css">
   <link rel="icon" href="./assets/icon/logosiyte.png">
   <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
@@ -29,7 +29,7 @@
                     <a href="index.html">Origem</a>
                 </li>
                 <li><a href="sociedadepersonagens.html">Sociedade</a></li>
-          <li><a href="sociedadepersonagens.html">Personagens</a></li>
+               <li><a href="sociedadepersonagens.html">Personagens</a></li>
                  <li>
                     <a href="cadastro.html">Cadastro</a>
                 </li>
@@ -42,39 +42,43 @@
     </div>
 
 
-  <div class="login">
-    <div class="alerta_erro">
-      <div class="card_erro" id="cardErro">
-        <span id="mensagem_erro"></span>
-      </div>
-    </div>
-    <div class="container">
-      <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
-        <div class="formulario">
-       
-          <div class="campo">
-            <span>Nome:</span>
-            <input id="nome_input" type="text" placeholder="Seu nome" />
-          </div>
-          <div class="campo">
-            <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
-          </div>
-          <div class="campo">
-            <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
-            <span>Confirmação da Senha:</span>
-            <input id="confirmacao_senha_input" type="password" placeholder="******" />
-          </div>
-          <button class="botao" onclick="cadastrar()">Cadastrar</button>
-        </div>
-        
+  <div class="banner-cadastro">
 
-        <div id="div_erros_login"></div>
-      </div>
+  <div class="card-box">
+
+    <h1>Bem-vindo à Família Addams!</h1>
+
+    <div class="input-group">
+      <label class="label">Insira seu nome completo:</label>
+      <input class="input" id="nome_input" type="text" placeholder="Seu nome">
+    </div>
+
+    <div class="input-group">
+      <label class="label">Insira seu e-mail:</label>
+      <input class="input" id="email_input" type="text" placeholder="meuemail@provedor.com">
+    </div>
+
+    <div class="input-group">
+      <label class="label">Insira sua senha:</label>
+      <input class="input" id="senha_input" type="password" placeholder="******">
+    </div>
+
+    <div class="input-group">
+      <label class="label">Confirme a senha escolhida:</label>
+      <input class="input" id="confirmacao_senha_input" type="password" placeholder="******">
+    </div>
+
+    <button class="botao" onclick="cadastrar()">Cadastrar-se</button>
+
+    <div class="log-text">
+      <span>Já tem conta?</span>
+      <a class="link-login" href="login.html">Entrar</a>
+    </div>
+
+  </div>
+
+</div>
+
     </div>
   </div>
 
@@ -92,9 +96,6 @@
 
 <script>
 
-  // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
-
   function cadastrar() {
     // aguardar();
 
@@ -104,16 +105,14 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
-    var idEmpresaVincular
+
 
     // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      codigoVar == ""
+      confirmacaoSenhaVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -125,18 +124,7 @@
       setInterval(sumirMensagem, 5000);
     }
 
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-        idEmpresaVincular = listaEmpresasCadastradas[i].id
-        console.log("Código de ativação válido.");
-        break;
-      } else {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-        finalizarAguardar();
-      }
-    }
+    
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -150,7 +138,7 @@
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+      
       }),
     })
       .then(function (resposta) {
